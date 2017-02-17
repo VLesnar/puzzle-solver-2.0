@@ -11,17 +11,23 @@ using System.Threading.Tasks;
  *  Last updated on: February 16, 2017 
  *  Cell - A class containing information in a space on the board;
  *      Enum: Status
- *      Properties: numberValue, color
- *      Methods: ChangeStatus() */
+ *      Properties: numberValue, color  */
 
 namespace Puzzle_Solver_2._0
 {
     class Cell
     {
-        public enum Status { white, black, unknown };  // If a cell is white, black, or unknown
-
-        private int number; // Determines if the cell holds a value
-        private Status color;  // Determines what color the cell is
+        public enum Status { unknown, black, white };  // If a cell is unknown (0), black (1), or 
+                                                       // white (2)
+        
+        public int number  // Determines if the cell holds a value
+        {
+            get; set;
+        }
+        public Status color    // Determines what color the cell is
+        {
+            get; set;
+        } 
 
         // Default Constructor - Sets number value to -1 and color to unknown
         public Cell()
@@ -34,11 +40,6 @@ namespace Puzzle_Solver_2._0
         public Cell(int num, Status col)
         {
             number = num;
-            color = col;
-        }
-
-        public void ChangeSpace(Status col)
-        {
             color = col;
         }
     }
