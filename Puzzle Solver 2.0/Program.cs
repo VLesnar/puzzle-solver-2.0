@@ -18,6 +18,7 @@ namespace Puzzle_Solver_2._0
         {
             Board board = new Board();
             board.CreateBoard();
+            board.FindNeighbors();
             Console.ReadLine();
         }
     }
