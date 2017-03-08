@@ -8,7 +8,7 @@ using System.Threading.Tasks;
  *  Version 2.0
  *  Veronica Lesnar
  *  Created on: February 16, 2017
- *  Last updated on: February 16, 2017  */
+ *  Last updated on: March 07, 2017  */
 
 namespace Puzzle_Solver_2._0
 {
@@ -16,10 +16,10 @@ namespace Puzzle_Solver_2._0
     {
         static void Main(string[] args)
         {
-            Board board = new Board();
-            board.CreateBoard();
-            board.FindNeighbors();
-            Console.ReadLine();
+            BoardSolver boardSolver = new BoardSolver();
+            boardSolver.InitializeBoard();
+            boardSolver.SolveOnes();
+            boardSolver.SolvePuzzle();
         }
     }
 }

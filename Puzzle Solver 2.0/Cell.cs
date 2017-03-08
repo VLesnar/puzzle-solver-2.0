@@ -8,11 +8,11 @@ using System.Threading.Tasks;
  *  Version 2.0
  *  Veronica Lesnar
  *  Created on: February 16, 2017
- *  Last updated on: February 17, 2017 
+ *  Last updated on: March 7, 2017 
  *  Cell - A class containing information in a space on the board;
  *      Enum: Status
  *      Properties: numberValue, color, posCol, posRow, nNeighbor, eNeighbor, sNeighbor, wNeighbor, neNeighbor, 
- *                  seNeighbor, swNeighbor, nwNeighbor  */
+ *                  seNeighbor, swNeighbor, nwNeighbor, adjacentNeighbors  */
 
 namespace Puzzle_Solver_2._0
 {
@@ -25,6 +25,7 @@ namespace Puzzle_Solver_2._0
         {
             get; set;
         }
+
         public Status color    // Determines what color the cell is
         {
             get; set;
@@ -34,6 +35,7 @@ namespace Puzzle_Solver_2._0
         {
             get; set;
         }
+
         public int posRow    // Determines what column the cell is in
         {
             get; set;
@@ -79,20 +81,27 @@ namespace Puzzle_Solver_2._0
             get; set;
         }
 
+        public List<Cell> adjacentNeighbors   // The cell's vertical and horizontal neighbors
+        {
+            get; set;
+        }
+
         // Default Constructor - Sets number value to -1 and color to unknown
         public Cell()
         {
             number = -1;    // Indicates that there is no value in the cell
             color = Status.unknown;
+            adjacentNeighbors = new List<Cell>();
         }
 
         // Constructor - Takes two ints, number value and color value of the cell
-        public Cell(int num, Status colr, int col, int row)
+        public Cell(int num, Status colr, int row, int col)
         {
             number = num;
             color = colr;
             posCol = col;
             posRow = row;
+            adjacentNeighbors = new List<Cell>();
         }
     }
 }
